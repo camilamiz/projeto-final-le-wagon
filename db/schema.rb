@@ -10,9 +10,73 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_11_13_154728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "autorships", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "councillor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["councillor_id"], name: "index_autorships_on_councillor_id"
+    t.index ["project_id"], name: "index_autorships_on_project_id"
+  end
+
+  create_table "councillors", force: :cascade do |t|
+    t.string "name"
+    t.string "party"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "presences", force: :cascade do |t|
+    t.bigint "councillor_id"
+    t.bigint "session_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["councillor_id"], name: "index_presences_on_councillor_id"
+    t.index ["session_id"], name: "index_presences_on_session_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.string "subject"
+    t.integer "chave"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "vereadors", force: :cascade do |t|
+    t.string "nome"
+    t.string "partido"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "votings", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "councillor_id"
+    t.bigint "session_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["councillor_id"], name: "index_votings_on_councillor_id"
+    t.index ["project_id"], name: "index_votings_on_project_id"
+    t.index ["session_id"], name: "index_votings_on_session_id"
+  end
+
+  add_foreign_key "autorships", "councillors"
+  add_foreign_key "autorships", "projects"
+  add_foreign_key "presences", "councillors"
+  add_foreign_key "presences", "sessions"
+  add_foreign_key "votings", "councillors"
+  add_foreign_key "votings", "projects"
+  add_foreign_key "votings", "sessions"
 end
