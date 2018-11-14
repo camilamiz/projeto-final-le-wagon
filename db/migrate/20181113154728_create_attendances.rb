@@ -1,8 +1,7 @@
 class CreateAttendances < ActiveRecord::Migration[5.2]
   def change
-    create_table :attendance do |t|
+    create_table :attendances do |t|
       t.references :councillor, foreign_key: true
-      t.references :session, foreign_key: true
       t.boolean :present
 
       t.timestamps
