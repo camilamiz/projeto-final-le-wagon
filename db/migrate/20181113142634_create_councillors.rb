@@ -3,6 +3,7 @@ class CreateCouncillors < ActiveRecord::Migration[5.2]
     create_table :councillors do |t|
       t.string :name
       t.string :party
+      t.integer :chave
 
       t.timestamps
     end
