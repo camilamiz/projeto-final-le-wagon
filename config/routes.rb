@@ -4,4 +4,3 @@ Rails.application.routes.draw do
   resources :councillors, only: [:index, :show]
   resources :projects, only: [:index, :show]
 end
-

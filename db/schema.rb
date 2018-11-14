@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_13_154728) do
+ActiveRecord::Schema.define(version: 2018_11_14_151232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attendances", force: :cascade do |t|
+    t.bigint "councillor_id"
+    t.bigint "session_id"
+    t.boolean "attended"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["councillor_id"], name: "index_attendances_on_councillor_id"
+    t.index ["session_id"], name: "index_attendances_on_session_id"
+  end
 
   create_table "authorships", force: :cascade do |t|
     t.bigint "project_id"
@@ -29,16 +39,6 @@ ActiveRecord::Schema.define(version: 2018_11_13_154728) do
     t.string "party"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "presences", force: :cascade do |t|
-    t.bigint "councillor_id"
-    t.bigint "session_id"
-    t.boolean "present"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["councillor_id"], name: "index_presences_on_councillor_id"
-    t.index ["session_id"], name: "index_presences_on_session_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -67,10 +67,10 @@ ActiveRecord::Schema.define(version: 2018_11_13_154728) do
     t.index ["session_id"], name: "index_votings_on_session_id"
   end
 
+  add_foreign_key "attendances", "councillors"
+  add_foreign_key "attendances", "sessions"
   add_foreign_key "authorships", "councillors"
   add_foreign_key "authorships", "projects"
-  add_foreign_key "presences", "councillors"
-  add_foreign_key "presences", "sessions"
   add_foreign_key "votings", "councillors"
   add_foreign_key "votings", "projects"
   add_foreign_key "votings", "sessions"
