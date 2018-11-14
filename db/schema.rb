@@ -17,10 +17,6 @@ ActiveRecord::Schema.define(version: 2018_11_13_154728) do
 
   create_table "attendances", force: :cascade do |t|
     t.bigint "councillor_id"
-<<<<<<< HEAD
-=======
-    t.date "date"
->>>>>>> 618553f1712f68dd9efbc0dc656db057c5750c66
     t.boolean "present"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,16 +50,6 @@ ActiveRecord::Schema.define(version: 2018_11_13_154728) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-=======
-  create_table "sessions", force: :cascade do |t|
-    t.date "date"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
->>>>>>> 618553f1712f68dd9efbc0dc656db057c5750c66
   create_table "votings", force: :cascade do |t|
     t.bigint "project_id"
     t.bigint "councillor_id"
