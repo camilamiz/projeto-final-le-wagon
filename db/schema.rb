@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_151232) do
+ActiveRecord::Schema.define(version: 2018_11_13_154728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attendances", force: :cascade do |t|
+  create_table "attendance", force: :cascade do |t|
     t.bigint "councillor_id"
     t.bigint "session_id"
-    t.boolean "attended"
+    t.boolean "present"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["councillor_id"], name: "index_attendances_on_councillor_id"
-    t.index ["session_id"], name: "index_attendances_on_session_id"
+    t.index ["councillor_id"], name: "index_attendance_on_councillor_id"
+    t.index ["session_id"], name: "index_attendance_on_session_id"
   end
 
   create_table "authorships", force: :cascade do |t|
@@ -37,14 +37,17 @@ ActiveRecord::Schema.define(version: 2018_11_14_151232) do
   create_table "councillors", force: :cascade do |t|
     t.string "name"
     t.string "party"
+    t.integer "chave"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "name"
-    t.string "subject"
-    t.integer "chave"
+    t.string "chave"
+    t.string "tipo"
+    t.integer "numero"
+    t.integer "ano"
+    t.string "ementa"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,8 +70,8 @@ ActiveRecord::Schema.define(version: 2018_11_14_151232) do
     t.index ["session_id"], name: "index_votings_on_session_id"
   end
 
-  add_foreign_key "attendances", "councillors"
-  add_foreign_key "attendances", "sessions"
+  add_foreign_key "attendance", "councillors"
+  add_foreign_key "attendance", "sessions"
   add_foreign_key "authorships", "councillors"
   add_foreign_key "authorships", "projects"
   add_foreign_key "votings", "councillors"
