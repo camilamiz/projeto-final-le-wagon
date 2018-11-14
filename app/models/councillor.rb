@@ -1,6 +1,6 @@
 class Councillor < ApplicationRecord
   has_many :votings
   has_many :presences
-  has_many :autorships
-  has_many :projects, through: :autorships
+  has_many :authorships
+  has_many :projects, through: :authorships
 end
