@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2018_11_13_154728) do
 
   create_table "attendances", force: :cascade do |t|
     t.bigint "councillor_id"
-    t.date "date"
     t.boolean "present"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -51,23 +50,14 @@ ActiveRecord::Schema.define(version: 2018_11_13_154728) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sessions", force: :cascade do |t|
-    t.date "date"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "votings", force: :cascade do |t|
     t.bigint "project_id"
     t.bigint "councillor_id"
-    t.bigint "session_id"
     t.boolean "vote"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["councillor_id"], name: "index_votings_on_councillor_id"
     t.index ["project_id"], name: "index_votings_on_project_id"
-    t.index ["session_id"], name: "index_votings_on_session_id"
   end
 
   add_foreign_key "attendances", "councillors"
@@ -75,5 +65,4 @@ ActiveRecord::Schema.define(version: 2018_11_13_154728) do
   add_foreign_key "authorships", "projects"
   add_foreign_key "votings", "councillors"
   add_foreign_key "votings", "projects"
-  add_foreign_key "votings", "sessions"
 end
