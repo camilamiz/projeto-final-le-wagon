@@ -15,6 +15,7 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'select2-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
