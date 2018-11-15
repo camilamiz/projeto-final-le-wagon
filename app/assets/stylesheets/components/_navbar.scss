@@ -5,8 +5,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
-  transition: 0.5s background-color ease;
 }
 
 .navbar-wagon-float {
@@ -16,7 +14,7 @@
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  background-color: rgba(200, 200, 200, 0.0);
+  background-color: rgba(200, 200, 200, 0.1);
   top: 0;
   right: 0;
   left: 0;
@@ -25,6 +23,7 @@
     color: black;
   }
 }
+
 
 /* Logo */
 .navbar-wagon-brand img {
