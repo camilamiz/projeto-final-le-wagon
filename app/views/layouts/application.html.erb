@@ -11,7 +11,9 @@
   </head>
   <body>
     <%= render 'components/navbar' %>
-    <%= yield %>
+    <div class="stick-footer">
+      <%= yield %>
+    </div>
     <%= render 'components/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
