@@ -20,7 +20,7 @@
   left: 0;
 
   a {
-    color: black;
+    color: rgba(200, 200, 200, 0.9);
   }
 }
 
@@ -28,6 +28,7 @@
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
+  opacity: 0.7;
 }
 
 /* User Avatar */

@@ -1,0 +1,26 @@
+.section {
+  height: 400px;
+}
+
+#first-section {
+  background-color: white;
+  padding: 20px;
+}
+
+#second-section {
+  background-color: #F8F8F8;
+  padding: 20px;
+}
+
+.card {
+  // height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+
+.align-center {
+  // align-items: center;
+}
