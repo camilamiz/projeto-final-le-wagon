@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_194904) do
+ActiveRecord::Schema.define(version: 2018_11_15_200846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_194904) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "att_date"
+    t.string "party"
     t.index ["councillor_id"], name: "index_attendances_on_councillor_id"
   end
 
@@ -59,6 +60,11 @@ ActiveRecord::Schema.define(version: 2018_11_14_194904) do
     t.datetime "updated_at", null: false
     t.string "sessao"
     t.date "vote_date"
+    t.string "tipo"
+    t.string "materia"
+    t.string "ementa"
+    t.string "rodape"
+    t.string "partido"
     t.index ["councillor_id"], name: "index_votings_on_councillor_id"
     t.index ["project_id"], name: "index_votings_on_project_id"
   end
