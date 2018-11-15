@@ -1,0 +1,20 @@
+<div>
+  <p>Gráfico de presença total de todos os vereadores</p>
+  <p>lista de vereadores com link para show do vereador</p>
+</div>
+
+
+
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Vereadores</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <% @councillors.each do |councillor| %>
+        <option><%= link_to councillors_path(councillor) do %>
+          <%= councillor.name %>
+          <% end %>
+        </option>
+      <% end %>
+    </select>
+  </div>
+</form>
