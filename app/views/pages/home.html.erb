@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="banner">
+  <div>
+    <%= render 'components/navbar' %>
+  </div>
+  <div class="banner-content">
+    <p>blblblba slogan slogan shshshshs</p>
+  </div>
+</div>
+<div class="section" id="first-section">
+  <p>blablabla - resuminho sobre a câmara</p>
+  <div class="btn btn-primary">Saiba mais</div>
+</div>
+<div class="section" id="second-section">
+  <div class="container">
+    <div class="row align-center">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card align-center">
+          <%= image_tag 'graph1.png' %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card align-center">
+          <%= image_tag 'graph2.png' %></div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card align-center">
+          <%= image_tag 'graph3.png' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
