@@ -10,8 +10,9 @@
     <label for="exampleFormControlSelect1">Vereadores</label>
     <select class="form-control" id="exampleFormControlSelect1">
       <% @councillors.each do |councillor| %>
-        <option><%= link_to councillors_path(councillor) do %>
-          <%= councillor.name %>
+        <option data-id=<%= "#{councillor.id}" %>>
+          <%= link_to councillors_path(councillor) do %>
+            <%= councillor.name %>
           <% end %>
         </option>
       <% end %>
