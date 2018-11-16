@@ -1,0 +1,21 @@
+// Specific CSS for your camara-page
+
+// 55 Camara's seats img
+.camara-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.small-text {
+  width: 50vw;
+}
+
+.texto {
+  font-size: 18px;
+  line-height: 1.58;
+  letter-spacing: -.004em;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-weight: 300;
+}
