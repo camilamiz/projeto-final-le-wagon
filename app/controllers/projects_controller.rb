@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
     Project.where("ano > ?", 2016).each do |project|
       proj_parties = project.authorships.map { |p| Councillor.find(p[:councillor_id]).party }.uniq
       proj_parties.each do |partido|
-        if hash.key?(partido) ? hash[partido] += 1 : hash[partido] = 1
+        hash.key?(partido) ? hash[partido] += 1 : hash[partido] = 1
       end
     end
   end
