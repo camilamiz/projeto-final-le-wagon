@@ -3,13 +3,10 @@
   <a href="/" class="navbar-wagon-brand">
     <%= image_tag "logo.png", id: "logo" %>
   </a>
-
-
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <a href="" class="navbar-wagon-item navbar-wagon-link">A Câmara</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Vereadores</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Projetos</a>
+    <%= link_to "A Câmara", "/infocamara", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Vereadores", "/councillors", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Projetos", "/projects", class: "navbar-wagon-item navbar-wagon-link" %>
   </div>
 </div>
-
