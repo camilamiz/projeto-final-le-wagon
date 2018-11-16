@@ -3,7 +3,21 @@
   <p>lista de vereadores com link para show do vereador</p>
 </div>
 
+<h3>Média Geral de Presença (Mandato corrente)</h3>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:<%= @general_presence %>%;">
+    <%= @general_presence %>%
+  </div>
+</div>
 
+<% @party_attendances.each do |party| %>
+  <p><%= party[0] %></p>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:<%= party[1] %>%;">
+      <%= party[1] %>%
+    </div>
+  </div>
+<% end %>
 
 <form>
   <div class="form-group">
