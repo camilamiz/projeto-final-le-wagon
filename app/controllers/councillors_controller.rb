@@ -2,7 +2,6 @@ class CouncillorsController < ApplicationController
   require 'open-uri'
   require 'nokogiri'
 
-
   def index
     @councillors = []
     Voting.where("vote_date > ?", Date.parse("01 Jan 2017")).each do |voting|
@@ -14,11 +13,13 @@ class CouncillorsController < ApplicationController
 
   def show
     @councillor = Councillor.find(params[:id])
+    @total_days = @councillor.attendances.where("att_date > ?", Date.parse("01 Jan 2017")).count.to_f
+    @present_days = @councillor.attendances.where("att_date > ? AND present = ?", Date.parse("01 Jan 2017"), true).count.to_f
+    @presence = (@present_days / @total_days * 100).floor(2)
   end
 
   def profile_image
   end
-
 
   private
 
@@ -33,6 +34,5 @@ class CouncillorsController < ApplicationController
       puts element.text.strip
       puts element.attribute('href').value
     end
-
   end
 end
