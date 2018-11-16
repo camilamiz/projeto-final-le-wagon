@@ -4,7 +4,12 @@ class CouncillorsController < ApplicationController
 
 
   def index
-    @councillors = Councillor.all
+    @councillors = []
+    Voting.where("vote_date > ?", Date.parse("01 Jan 2017")).each do |voting|
+      councillor = voting.councillor
+      @councillors << councillor if @councillors.include?(councillor) == false
+    end
+    return @councillors
   end
 
   def show
