@@ -79,19 +79,19 @@ require 'nokogiri'
 # mayor = Councillor.find_by(name: "João Agripino da Costa Doria Junior")
 # mayor.party = "PSDB"
 # mayor.save
-mayor = Councillor.find_by(name: "BRUNO COVAS")
-mayor.party = "PSDB"
-mayor.save
+# mayor = Councillor.find_by(name: "BRUNO COVAS")
+# mayor.party = "PSDB"
+# mayor.save
 
-count = 0
-Voting.where(partido: nil).all.each do |voting|
-  if voting.project.authorships.first.councillor == mayor
-    count += 1
-    voting.partido = mayor.party
-    voting.save
-    puts "#{count} | Voting ID : #{voting.id}"
-  end
-end
+# count = 0
+# Voting.where(partido: nil).all.each do |voting|
+#   if voting.project.authorships.first.councillor == mayor
+#     count += 1
+#     voting.partido = mayor.party
+#     voting.save
+#     # puts "#{count} | Voting ID : #{voting.id}"
+#   end
+# end
 
 # puts "Done!"
 
