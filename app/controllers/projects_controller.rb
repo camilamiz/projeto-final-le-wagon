@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all
-    # @parties_projects = count_projects
+    @parties_projects = count_projects
   end
 
   def show
