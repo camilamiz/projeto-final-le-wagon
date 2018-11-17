@@ -4,13 +4,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.section-presentation {
-  font-size: 10px;
-}
-
 #camara {
   background-color: #F8F8F8;
   padding: 20px;
+  text-align: center;
 }
 
 #graphs {
@@ -53,4 +50,24 @@
 }
 .infocamara-button {
   text-align: center;
+}
+.info-box {
+  text-align: center;
+  border-right: 1px solid rgba(50, 50, 50, 0.3);
+  height: 180px;
+  padding: 20px;
+    .number {
+      font-size: 50px;
+      color: rgba(0, 237, 100, 0.7);
+    }
+}
+
+.box-sem-borda {
+  text-align: center;
+  height: 180px;
+  padding: 20px;
+    .number {
+      font-size: 50px;
+      color: rgba(0, 237, 100, 0.7);
+    }
 }
