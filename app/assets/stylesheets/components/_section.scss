@@ -1,15 +1,20 @@
 .section {
-  height: 400px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-family: 'Roboto', sans-serif;
 }
 
-#first-section {
-  background-color: white;
-  padding: 20px;
+.section-presentation {
+  font-size: 10px;
 }
 
-#second-section {
+#camara {
   background-color: #F8F8F8;
   padding: 20px;
+}
+
+#graphs {
+  background-color: white;
 }
 
 .card {
@@ -22,4 +27,30 @@
 
 .align-center {
   // align-items: center;
+}
+.project-info {
+  border-radius: 1px;
+  padding: 20px;
+  font-size: 18px;
+}
+
+#project {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: top;
+    i {
+      font-size: 60px;
+      color: rgba(0, 237, 100, 0.7);
+    }
+}
+.info-texto {
+  text-align: justify;
+  color: rgba(70, 70, 70, 0.7);
+}
+.icon {
+ text-align: center;
+}
+.infocamara-button {
+  text-align: center;
 }

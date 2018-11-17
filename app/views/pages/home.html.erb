@@ -3,19 +3,68 @@
     <%= render 'components/navbar' %>
   </div>
 </div>
-<div class="section" id="project">
-</div>
 
-<hr>
+<div class="section">
+    <h3>Como surgiu o projeto?</h3>
+  <div id="project">
+    <div class="project-info col-xs-3">
+      <div class="icon">
+        <i class="far fa-lightbulb"></i>
+      </div>
+      <br>
+      <br>
+      <div class="info-texto">
+        <p> Você se lembra em quem votou para vereador na última eleição? Sabe se essa pessoa foi eleita? E, em caso positivo, como está trabalhando na Câmara de Vereadores? Que veículos de informações você utiliza para saber disso? Os veículos de comunicação que existem dão a atenção devida para essas informações?</p>
+      </div>
+    </div>
+    <div class="project-info col-xs-3">
+      <div class="icon">
+        <i class="fa fa-shopping-basket"></i>
+      </div>
+      <br>
+      <br>
+      <div class="info-texto">
+        <p> A lei de <%= link_to 'Dados Abertos', 'http://dados.gov.br/noticia/primeira-lei-de-acesso-no-mundo-que-preve-dados-abertos', target:"_blank" %> disponibiliza uma base de dados em forma eletrônica para que qualquer cidadão possa utilizar delas e tirar conclusões sobre o funcionamento de algumas instituições públicas.<br>  Legal! Mas já visualizou como esses dados são <%= link_to 'disponibilizados', 'http://www.saopaulo.sp.leg.br/transparencia/dados-abertos/dados-disponibilizados-em-formato-aberto/' %>? <br>Achou confuso? Nós também! <br></p>
+      </div>
+    </div>
+    <div class="project-info col-xs-3">
+      <div class="icon">
+        <i class="fa fa-cogs"></i>
+      </div>
+      <br>
+      <br>
+      <div class="info-texto">
+        <p>Enquanto ainda não temos tecnologias tipo <em>Black Mirror</em> nos nossos olhos para tirarmos conclusões dessas API só batendo o olho nelas, resolvemos criar o Projeto Vérteres. Nele damos uma arrumadinha nesses dados e disponibilizamos de uma maneira mais fácil de ser digerida por nós humanos. </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="section" id="camara">
-  <p>blablabla - resuminho sobre a câmara</p>
-  <div class="btn btn-primary">Saiba mais</div>
+  <div class="section-presentation">
+    <h3>Como funciona a câmara de vereadores?</h3>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="info-box col-xs-2">
+
+    </div>
+    <div class="info-box col-xs-2">b</div>
+    <div class="info-box col-xs-2">c</div>
+    <div class="info-box col-xs-2">d</div>
+  </div>
+  <br>
+  <br>
+  <div class="infocamara-button col-xs-12">
+    <div class="btn btn-primary">Saiba mais</div>
+  </div>
 </div>
 
-<hr>
-
 <div class="section" id="graphs">
+  <div class="section-presentation">
+    <h3>Que informações conseguimos a partir desses dados?</h3>
+  </div>
   <div class="container">
     <div class="row align-center">
       <div class="col-xs-12 col-sm-4">
@@ -36,7 +85,3 @@
   </div>
 </div>
 
-<hr>
-
-<div class="section" id="icons">
-</div>

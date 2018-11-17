@@ -1,0 +1,5 @@
+<h1>Pie Chart</h1>
+
+<%= column_chart Project.group(:ano).count %>
+<%= column_chart Project.where(ano: 2012).group(:tipo).count %>
+<%= pie_chart({"Football" => 10, "Basketball" => 5}) %>
