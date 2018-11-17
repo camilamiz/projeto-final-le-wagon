@@ -2,7 +2,15 @@
   padding-top: 50px;
   padding-bottom: 50px;
   font-family: 'Roboto', sans-serif;
+
+  #sobre-section {
+    color: rgba(70, 70, 70, 0.7);
+  }
+  #sobre-section:hover {
+    text-decoration: none;
+  }
 }
+
 
 #camara {
   background-color: #F8F8F8;

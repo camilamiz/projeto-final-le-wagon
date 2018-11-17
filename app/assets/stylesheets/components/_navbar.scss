@@ -11,6 +11,10 @@
     color: rgba(70, 70, 70, 0.7);
     font-size: 30px;
   }
+  a {
+    color: rgba(70, 70, 70, 0.7);
+    font-size: 18px;
+    }
 }
 
 .navbar-wagon-float {
@@ -28,7 +32,6 @@
   a {
     color: rgba(250, 250, 250, 0.7);
     font-size: 18px;
-    font-weight: lighter;
     }
 }
 
@@ -36,8 +39,9 @@
   font-family: 'Allerta Stencil';
   font-size: 34px;
 }
+
 /* Logo */
-.navbar-wagon-brand img {
+.navbar-wagon-brand {
   height: 50px;
   opacity: 0.8;
 }
@@ -57,10 +61,7 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: black;
+  color: rgba(240, 240, 240, 1);
   font-size: 14px;
 }
-.navbar-wagon-link:hover {
-  color: lightgray;
-  text-decoration: none;
-}
+
