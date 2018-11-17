@@ -1,10 +1,12 @@
 <div class=<%= current_page?(root_path) ? 'navbar-wagon-float' : 'navbar-wagon'  %>>
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <%= image_tag "logo_black.png", id: "logo" %>
+    <h1 id="logo">VERTERES</h1>
+<!--     <%= image_tag "logo_black.png", id: "logo" %> -->
   </a>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right">
+    <%= link_to "Sobre", "Sobre", class: "navba r-wagon-item navbar-wagon-link" %>
     <%= link_to "A Câmara", "/infocamara", class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Vereadores", "/councillors", class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Projetos", "/projects", class: "navbar-wagon-item navbar-wagon-link" %>
