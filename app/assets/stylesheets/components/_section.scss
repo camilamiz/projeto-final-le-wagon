@@ -20,6 +20,7 @@
   background-color: white;
 }
 
+
 .card {
   // height: 175px;
   background-size: cover !important;
@@ -32,10 +33,6 @@
   border-radius: 1px;
   padding: 20px;
   font-size: 18px;
-  i {
-    font-size: 60px;
-    color: rgba(0, 237, 100, 0.7);
-  }
 }
 
 #project {
@@ -50,6 +47,10 @@
 }
 .icon {
  text-align: center;
+  i {
+    font-size: 60px;
+    color: rgba(0, 237, 100, 0.7);
+  }
 }
 .infocamara-button {
   text-align: center;
@@ -75,8 +76,3 @@
     }
 }
 
-#attendance-chart {
-  display: flex;
-  justify-content: space-around;
-  background-color: white;
-}
