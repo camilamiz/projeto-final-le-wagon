@@ -1,20 +1,43 @@
-<!-- <div>
-  <p>Gráfico de presença total de todos os vereadores</p>
-  <p>lista de vereadores com link para show do vereador</p>
-</div> -->
-<div class="container">
-  <h3>Média Geral de Presença (Mandato corrente)</h3>
-  <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:<%= @general_presence %>%;">
-      <%= @general_presence %>%
+<div class="page-header">
+  <h1>Example page header <small>Subtext for header</small></h1>
+</div>
+
+<div><h3>Presença</h3></div>
+<div class="section" id="attendance-chart">
+  <div class="project-info col-xs-4">
+    <div class="icon">
+      <i class="fas fa-user-check"></i>
+    </div>
+    <br><br>
+    <div class="info-texto">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
     </div>
   </div>
+  <div class="project-info col-xs-4">
+    <h3>Média Geral de Presença (Mandato corrente)</h3>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:<%= @general_presence %>%;">
+        <%= @general_presence %>%
+      </div>
+    </div>
+      <form>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Vereadores</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <% @councillors.each do |councillor| %>
+              <option data-id=<%= "#{councillor.id}" %>>
+                <%= link_to councillors_path(councillor) do %>
+                  <%= councillor.name %>
+                <% end %>
+              </option>
+            <% end %>
+          </select>
+        </div>
+      </form>
+  </div>
 
-<br><br>
-
-<div class="container">
-  <div class="row align-center">
-    <div class="col-xs-12 col-sm-6">
+  <div class="scroll-wrapper">
+    <div class="col-xs-12">
       <% @party_attendances.each do |party| %>
         <div class="card align-center">
           <%= party[0] %>
@@ -28,21 +51,6 @@
         </div>
       <% end %>
     </div>
-  </div>
-</div>
+  </div> <!-- scroll-wrapper -->
 
-  <form>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Vereadores</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <% @councillors.each do |councillor| %>
-          <option data-id=<%= "#{councillor.id}" %>>
-            <%= link_to councillors_path(councillor) do %>
-              <%= councillor.name %>
-            <% end %>
-          </option>
-        <% end %>
-      </select>
-    </div>
-  </form>
-</div>
+</div> <!-- section -->

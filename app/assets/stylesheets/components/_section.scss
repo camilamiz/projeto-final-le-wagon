@@ -10,8 +10,6 @@
     text-decoration: none;
   }
 }
-
-
 #camara {
   background-color: #F8F8F8;
   padding: 20px;
@@ -30,13 +28,14 @@
   position: relative;
 }
 
-.align-center {
-  // align-items: center;
-}
 .project-info {
   border-radius: 1px;
   padding: 20px;
   font-size: 18px;
+  i {
+    font-size: 60px;
+    color: rgba(0, 237, 100, 0.7);
+  }
 }
 
 #project {
@@ -44,10 +43,6 @@
   display: flex;
   justify-content: space-around;
   align-items: top;
-    i {
-      font-size: 60px;
-      color: rgba(0, 237, 100, 0.7);
-    }
 }
 .info-texto {
   text-align: justify;
@@ -78,4 +73,10 @@
       font-size: 50px;
       color: rgba(0, 237, 100, 0.7);
     }
+}
+
+#attendance-chart {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
 }
