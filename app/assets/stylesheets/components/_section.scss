@@ -10,8 +10,6 @@
     text-decoration: none;
   }
 }
-
-
 #camara {
   background-color: #F8F8F8;
   padding: 20px;
@@ -22,6 +20,7 @@
   background-color: white;
 }
 
+
 .card {
   // height: 175px;
   background-size: cover !important;
@@ -30,24 +29,17 @@
   position: relative;
 }
 
-.align-center {
-  // align-items: center;
-}
 .project-info {
   border-radius: 1px;
   padding: 20px;
   font-size: 18px;
 }
 
-#project {
+.project {
   margin-top: 30px;
   display: flex;
   justify-content: space-around;
   align-items: top;
-    i {
-      font-size: 60px;
-      color: rgba(0, 237, 100, 0.7);
-    }
 }
 .info-texto {
   text-align: justify;
@@ -55,6 +47,10 @@
 }
 .icon {
  text-align: center;
+  i {
+    font-size: 60px;
+    color: rgba(0, 237, 100, 0.7);
+  }
 }
 .infocamara-button {
   text-align: center;
@@ -78,4 +74,8 @@
       font-size: 50px;
       color: rgba(0, 237, 100, 0.7);
     }
+}
+
+.row-project {
+  margin-left: 0;
 }
