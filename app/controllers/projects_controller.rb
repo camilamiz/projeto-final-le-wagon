@@ -11,12 +11,11 @@ class ProjectsController < ApplicationController
   private
 
   def count_projects
+    parties = Attendance.where("att_date > ?", Date.parse("01 Jan 2017")).map { |att| att[:party] }.uniq
     hash = {}
-    Project.where("ano > ?", 2016).each do |project|
-      proj_parties = project.authorships.map { |p| Councillor.find(p[:councillor_id]).party }.uniq
-      proj_parties.each do |partido|
-        hash.key?(partido) ? hash[partido] += 1 : hash[partido] = 1
-      end
+    parties.each do |partido|
+      hash[partido] = Project.where("ano > ?", 2016).joins(:councillors).where(councillors: { party: partido }).count
     end
+    return hash
   end
 end
