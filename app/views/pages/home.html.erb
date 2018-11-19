@@ -1,16 +1,81 @@
 <div id="banner">
-  <div>
-    <%= render 'components/navbar' %>
-  </div>
-  <div class="banner-content">
-    <p>Eles sabem tudo sobre o futuro da sua cidade.<br>E agora, você vai saber tudo sobre a participação deles.</p>
-  </div>
 </div>
-<div class="section" id="first-section">
-  <p>blablabla - resuminho sobre a câmara</p>
-  <div class="btn btn-primary">Saiba mais</div>
+
+<div class="section">
+  <div class="row-camara col-xs-12">
+    <a id="sobre-section"><h3>Como surgiu o projeto?</h3></a>
+    <div class="project">
+      <div class="project-info col-xs-3">
+        <div class="icon">
+          <i class="far fa-lightbulb"></i>
+        </div>
+        <br>
+        <br>
+        <div class="info-texto">
+          <p> Você se lembra em quem votou para vereador na última eleição? Sabe se essa pessoa foi eleita? E, em caso positivo, como está trabalhando na Câmara de Vereadores? Quais veículos de informação você utiliza para saber sobre isso? Será que eles dão a atenção devida para essas informações?</p>
+        </div>
+      </div>
+      <div class="project-info col-xs-3">
+        <div class="icon">
+          <i class="fa fa-shopping-basket"></i>
+        </div>
+        <br>
+        <br>
+        <div class="info-texto">
+          <p> A lei de <%= link_to 'Dados Abertos', 'http://dados.gov.br/noticia/primeira-lei-de-acesso-no-mundo-que-preve-dados-abertos', target:"_blank" %> disponibiliza uma base de dados eletrônica, para que qualquer cidadão possa utilizar e tirar conclusões sobre o funcionamento de algumas instituições públicas. Legal! Mas você já visualizou como esses dados são <%= link_to 'disponibilizados', 'http://www.saopaulo.sp.leg.br/wp-content/uploads/dados_abertos/vereador/vereador.txt' %>? Achou confuso? Nós também!</p>
+        </div>
+      </div>
+      <div class="project-info col-xs-3">
+        <div class="icon">
+          <i class="fa fa-cogs"></i>
+        </div>
+        <br>
+        <br>
+        <div class="info-texto">
+          <p>Enquanto ainda não temos tecnologias como as do seriado <em>Black Mirror</em> em nossos olhos para tirarmos conclusões a respeito dessas APIs, resolvemos criar o Projeto Vérteres. Nele, damos uma "arrumadinha" nesses dados e disponibilizamos de uma maneira mais fácil de ser digerida por nós, seres humanos. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="section" id="camara">
+
+  <div class="section-presentation">
+    <h3>Como funciona a câmara de vereadores?</h3>
+  </div>
+  <br>
+  <div class="row-camara col-xs-12">
+    <div class="info-box col-xs-3">
+      <div class="number">55</div>
+      <div class="number-desc">é o número de vereadores eleitos.</div>
+    </div>
+    <div class="info-box col-xs-3">
+      <div class="number">4 anos</div>
+      <div class="number-desc">é a duração de seu mandato, sem limite para reeleição.</div>
+    </div>
+    <div class="info-box col-xs-3">
+      <div class="number">150%</div>
+      <div class="number-desc">é o número de vagas disponíveis no município. Esta é a quantidade de vereadores que cada partido pode lançar.</div>
+    </div>
+    <div class="box-sem-borda col-xs-3">
+      <div class="number" style="font-size: 36px;">R$ 156 mil/mês</div>
+      <div class="number-desc"><br>é a verba de gabinete por vereador, que é o dinheiro destinado à contratação de assessores.</div>
+    </div>
+  </div>
+  <br><br><br>
+  <br><br><br>
+  <br><br><br>
+  <div class="infocamara-button col-xs-12">
+    <%= link_to "Saiba mais", "/infocamara", class: "btn btn-danger" %>
+  </div>
+  <br>
+  <br>
 </div>
-<div class="section" id="second-section">
+
+<div class="section" id="graphs">
+  <div class="section-presentation">
+    <h3>Que informações conseguimos a partir desses dados?</h3>
+  </div>
   <div class="container">
     <div class="row align-center">
       <div class="col-xs-12 col-sm-4">
@@ -30,3 +95,4 @@
     </div>
   </div>
 </div>
+

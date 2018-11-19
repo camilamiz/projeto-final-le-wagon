@@ -1,2 +1,43 @@
- <!-- <%= line_chart Project.group_by_day(:created_at).count %> -->
- <h1>teste</h1>
+<h1>Pie Chart</h1>
+
+
+<ul class="list-group">
+  <li class="list-group-item">PL - Projeto de Lei</li>
+  <li class="list-group-item">PDL - Projeto de Decreto Legislativo</li>
+  <li class="list-group-item">PR - Projeto de Resoluçao</li>
+  <li class="list-group-item">PLO - Projeto de Emenda Lei Orgânica</li>
+  <li class="list-group-item">RPP - Requerimento P com Processo</li>
+  <li class="list-group-item">RPS - Requerimento P sem Processo</li>
+  <li class="list-group-item">RDP - Requerimento D com processo</li>
+  <li class="list-group-item">IND - Indicação</li>
+  <li class="list-group-item">REC - Recurso</li>
+  <li class="list-group-item">SUB - Substitutivo</li>
+  <li class="list-group-item">RDS - Requerimento D sem Processo</li>
+  <li class="list-group-item">EME - Emenda</li>
+  <li class="list-group-item">DOCREC - Documento Recebido</li>
+  <li class="list-group-item">PAR - Parecer</li>
+  <li class="list-group-item">RELCOM - Relatório da Comissão/li>
+  <li class="list-group-item">PPA - Plano Plurianual</li>
+  <li class="list-group-item">LO - Lei Orçamentária</li>
+  <li class="list-group-item">RSC - Requerimento Subcomissão</li>
+  <li class="list-group-item">DSP - Despacho</li>
+  <li class="list-group-item">VOTO - Folha de Votação</li>
+  <li class="list-group-item">REGTAQ - Registros Taquigráficos</li>
+  <li class="list-group-item">REQ -</li>
+  <li class="list-group-item">MOC - Moção</li>
+  <li class="list-group-item">MOC - Moção</li>
+  <li class="list-group-item">MOC - Moção</li>
+  <li class="list-group-item">MOC - Moção</li>
+  <li class="list-group-item">MOC - Moção</li>
+  <li class="list-group-item">MOC - Moção</li>
+
+</ul>
+
+<%= column_chart Project.where(ano: 2012).group(:tipo).count, thousands: "." %>
+<%= column_chart Project.where(ano: 2013).group(:tipo).count %>
+<%= column_chart Project.where(ano: 2014).group(:tipo).count %>
+<%= column_chart Project.where(ano: 2015).group(:tipo).count %>
+<%= column_chart Project.where(ano: 2016).group(:tipo).count %>
+<%= column_chart Project.where(ano: 2017).group(:tipo).count %>
+<%= column_chart Project.where(ano: 2018).group(:tipo).count %>
+>>>>>>> a4dcadc438695405fb429baa48689a2cb67f1d35

@@ -6,6 +6,7 @@
     <title>Projeto Vérteres</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
+    <%= javascript_include_tag 'application' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <%= favicon_link_tag %>
@@ -16,7 +17,6 @@
       <%= yield %>
     </div>
     <%= render 'components/footer' %>
-    <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
   </body>

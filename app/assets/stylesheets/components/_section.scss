@@ -1,26 +1,85 @@
 .section {
-  height: 400px;
-}
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-family: 'Roboto', sans-serif;
 
-#first-section {
-  background-color: white;
-  padding: 20px;
+  #sobre-section {
+    color: rgba(70, 70, 70, 0.7);
+  }
+  #sobre-section:hover {
+    text-decoration: none;
+  }
 }
-
-#second-section {
+#camara {
   background-color: #F8F8F8;
   padding: 20px;
+  text-align: center;
 }
+
+#graphs {
+  background-color: white;
+}
+
 
 .card {
   // height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
-  color: white;
+  color: black;
   position: relative;
 }
 
-.align-center {
-  // align-items: center;
+.project-info {
+  border-radius: 1px;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.project {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: top;
+}
+.info-texto {
+  text-align: justify;
+  color: rgba(70, 70, 70, 0.7);
+}
+.icon {
+ text-align: center;
+  i {
+    font-size: 60px;
+    color: rgba(0, 237, 100, 0.7);
+  }
+}
+.infocamara-button {
+  text-align: center;
+}
+.info-box {
+  text-align: center;
+  border-right: 1px solid rgba(50, 50, 50, 0.3);
+  height: 180px;
+  padding: 20px;
+    .number {
+      font-size: 50px;
+      color: rgba(0, 237, 100, 0.7);
+    }
+}
+
+.box-sem-borda {
+  text-align: center;
+  height: 180px;
+  padding: 20px;
+    .number {
+      font-size: 50px;
+      color: rgba(0, 237, 100, 0.7);
+    }
+}
+
+.row-project {
+  margin-left: 0;
+}
+
+#attendance-chart {
+  margin-top: 30px;
 }
