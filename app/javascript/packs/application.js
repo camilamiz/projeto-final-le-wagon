@@ -1,2 +1,4 @@
 import "bootstrap";
-import "../components/tooltip.js"
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+
+initUpdateNavbarOnScroll();
