@@ -1,9 +1,6 @@
-<div class=<%= current_page?(root_path) ? 'navbar-wagon-float' : 'navbar-wagon'  %>>
+<div class="navbar-wagon navbar-fixed-top">
   <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <h1 id="logo">VERTERES</h1>
-<!--     <%= image_tag "logo_black.png", id: "logo" %> -->
-  </a>
+  <%= link_to "VERTERES", root_path, id: "logo" %>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right">
     <%= link_to "Sobre", anchor: "sobre-section", class: "navba r-wagon-item navbar-wagon-link" %>
