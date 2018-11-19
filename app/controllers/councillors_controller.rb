@@ -4,10 +4,7 @@ class CouncillorsController < ApplicationController
 
   def index
     @councillors = []
-    Voting.where("vote_date > ?", Date.parse("01 Jan 2017")).each do |voting|
-      councillor = voting.councillor
-      @councillors << councillor if @councillors.include?(councillor) == false
-    end
+    @councillors = Voting.where("vote_date > ?", Date.parse("01 Jan 2017")).map(&:councillor).uniq
     general_total_days = Attendance.where("att_date > ?", Date.parse("01 Jan 2017")).count.to_f
     general_present_days = Attendance.where("att_date > ? AND present = ?", Date.parse("01 Jan 2017"), true).count.to_f
     @general_presence = (general_present_days / general_total_days * 100).floor(2)
@@ -43,11 +40,10 @@ class CouncillorsController < ApplicationController
   def count_attendances
     hash = {}
     attendances = Attendance.where("att_date > ?", Date.parse("01 Jan 2017"))
-    att_parties = attendances.map { |p| p[:party] }.uniq
+    att_parties = attendances.map { |att| att[:party] }.uniq
     att_parties.each do |partido|
       hash[partido] = (attendances.where(party: partido, present: true).count.to_f /
-        attendances.where(party: partido).count.to_f *
-        100).floor(2)
+                        attendances.where(party: partido).count.to_f * 100).floor(2)
     end
     return hash
   end
