@@ -10,7 +10,7 @@
         </div>
       <br><br>
       <div class="info-texto">
-        <p>blblblba slogan slogan shshshshs</p>
+        <p></p>
 
       <p>http://splegisws.camara.sp.gov.br/ws/ws2.asmx/TiposDeMateria</p>
       </div>
@@ -21,10 +21,28 @@
 
       <div class="project-info col-xs-6">
         <div class="project-chart">
+        <p>2012</p>
+          <%= column_chart Project.where(ano: 2012).group(:tipo).count, thousands: ".", width: "600px", height: "300px", xtitle: "Tipo de matéria", ytitle: "Quantidade" %>
+        <p>2017</p>
           <%= column_chart Project.where(ano: 2017).group(:tipo).count, thousands: ".", width: "600px", height: "300px", xtitle: "Tipo de matéria", ytitle: "Quantidade" %>
         </div>
+        <p>2018</p>
         <div class="project-chart">
           <%= column_chart Project.where(ano: 2018).group(:tipo).count, thousands: ".", width: "600px", height: "300px", xtitle: "Tipo de matéria", ytitle: "Quantidade"  %>
+          <%= column_chart Project.where(ano: 2012).where(tipo: "IND").joins(:authorships).where(project[0].id == project_id).group(councillor_id).count%>
+
+
+<!-- project = Project.where(ano: 2012).where(tipo: "IND")
+auts = project.map { |p| p.authorships }
+name = auts.map { |aut| aut[0].councillor.name}
+ -->
+
+
+          <!--  .joins(:councillors).where("councillor.id == councillor_id").group(:name).count, thousands: ".", width: "600px", height: "300px", xtitle: "Tipo de matéria", ytitle: "Quantidade"  %> -->
+
+        <%= line_chart @project_list.map { |project|
+    {name: project, data: @projects.where(tipo: project).group(:ano).count }
+      }, height: "500px", thousands: "." %>
         </div>
       </div>
     </div> <!-- project -->
