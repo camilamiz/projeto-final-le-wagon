@@ -85,7 +85,7 @@
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="card align-center">
-          <%= image_tag 'graph2.png' %></div>
+          <%= column_chart Project.where(ano: 2013..2018).group(:ano).count, thousands: ".", width: "400px", height: "300px" %>qtde projetos ano</div>
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="card align-center">

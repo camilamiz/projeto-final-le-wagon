@@ -1,4 +1,42 @@
-  <p>blblblba slogan slogan shshshshs</p>
+<div class="section" id="project-chart-type">
+  <div class="section-presentation">
+    <h3>Tipos de Matéria</h3>
+  </div>
+  <div class="row col-xs-12">
+    <div class="project">
+      <div class="project-info col-xs-4">
+        <div class="icon">
+          <i class="far fa-sticky-note"></i>
+        </div>
+      <br><br>
+      <div class="info-texto">
+        <p>blblblba slogan slogan shshshshs</p>
+
+      <p>http://splegisws.camara.sp.gov.br/ws/ws2.asmx/TiposDeMateria</p>
+      </div>
+        <div class="scroll-wrapper">
+          <%= render 'components/tipos_de_projeto' %>
+        </div>
+      </div>
+
+      <div class="project-info col-xs-6">
+        <div class="project-chart">
+          <%= column_chart Project.where(ano: 2017).group(:tipo).count, thousands: ".", width: "600px", height: "300px", xtitle: "Tipo de matéria", ytitle: "Quantidade" %>
+        </div>
+        <div class="project-chart">
+          <%= column_chart Project.where(ano: 2018).group(:tipo).count, thousands: ".", width: "600px", height: "300px", xtitle: "Tipo de matéria", ytitle: "Quantidade"  %>
+        </div>
+      </div>
+    </div> <!-- project -->
+
+  </div> <!-- row-camara -->
 
 
-<%= render 'components/parties_projects_graph' %>
+
+
+<!-- http://www.saopaulo.sp.leg.br/?s=requerimento -->
+
+</div>
+
+
+<!-- http://splegisws.camara.sp.gov.br/ws/ws2.asmx/ProjetosPorAnoJSON?ano=2018 -->
