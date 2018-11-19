@@ -99,29 +99,7 @@
     </div>
 
     <div class="project-info col-xs-4">
-      <div class="icon">
-        <i class="fas fa-users"></i>
-      </div>
-      <h3>Média Geral de Presença (Mandato corrente)</h3>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:<%= @general_presence %>%;">
-          <%= @general_presence %>%
-        </div>
-      </div>
-        <form>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Vereadores</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <% @councillors.each do |councillor| %>
-                <option data-id=<%= "#{councillor.id}" %>>
-                  <%= link_to councillors_path(councillor) do %>
-                    <%= councillor.name %>
-                  <% end %>
-                </option>
-              <% end %>
-            </select>
-          </div>
-        </form>
+      <%= column_chart Authorship.group(:councillor_id).count, width: "400px", height: "400px" %>
     </div>
 
     <div class="project-info col-xs-4">
