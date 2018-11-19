@@ -3,8 +3,7 @@ class CouncillorsController < ApplicationController
   require 'nokogiri'
 
   def index
-    @councillors = []
-    @councillors = Voting.where("vote_date > ?", Date.parse("01 Jan 2017")).map(&:councillor).uniq
+    @councillors = Councillor.joins(:votings).where("vote_date > ?", Date.parse("01 Jan 2017")).uniq
     general_total_days = Attendance.where("att_date > ?", Date.parse("01 Jan 2017")).count.to_f
     general_present_days = Attendance.where("att_date > ? AND present = ?", Date.parse("01 Jan 2017"), true).count.to_f
     @general_presence = (general_present_days / general_total_days * 100).floor(2)
