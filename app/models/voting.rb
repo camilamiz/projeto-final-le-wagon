@@ -2,6 +2,8 @@ class Voting < ApplicationRecord
   belongs_to :project
   belongs_to :councillor
 
+
+# Votings with date range
   def self.session_grouped(date_range = {})
     date_range = {
       start_date: order(:vote_date).pluck(:vote_date).first,
@@ -12,6 +14,7 @@ class Voting < ApplicationRecord
       .group(:sessao).count
   end
 
+# Votings by project_id
   def self.project_grouped
     group(:project_id).count
   end
