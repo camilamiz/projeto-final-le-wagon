@@ -1,30 +1,45 @@
 // Specific CSS for your camara-page
 
-// 55 Camara's seats img
-// .camara-row {
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
+.wrapper-gray {
+  background: $light-gray;
+  color: black;
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.card-icon {
+  background: white;
+  padding: 30px;
+  box-shadow: 1px 1px 2px #e7e7e7;
+  border-radius: 4px;
+  margin: 20px 50px;
+
+}
+
+.card-text {
+  background: white;
+  padding: 30px;
+  box-shadow: 1px 1px 2px #e7e7e7;
+  border-radius: 4px;
+  margin: 20px 50px;
+  text-align: center;
+}
+
+#card-seats {
+  background: white;
+  padding: 30px;
+  box-shadow: 1px 1px 2px #e7e7e7;
+  border-radius: 4px;
+  margin: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// .classe-de-tamanho {
+//   pra geral ficar igual
+
 // }
-
-// .small-text {
-//   width: 50vw;
-// }
-
-// // .texto {
-// //   font-size: 18px;
-// //   line-height: 1.58;
-// //   letter-spacing: -.004em;
-// //   margin-top: 50px;
-// //   margin-bottom: 50px;
-// //   font-weight: 300;
-// // }
-
-// .two-resp {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   background-color: $light-gray;
-//   padding: 10px;
-// }
-
