@@ -30,20 +30,7 @@
         <div class="project-chart">
           <%= column_chart Project.where(ano: 2018).group(:tipo).count, thousands: ".", width: "600px", height: "300px", xtitle: "Tipo de matéria", ytitle: "Quantidade"  %>
 
-
-          <!-- <script> -->
-
-             <!-- console.log( -->
-<!--             Project.where(ano: 2012).where(tipo: "IND").joins(:authorships).where("authorship.project_id = ?", self.project.id) %> -->
-            <!-- ); -->
-          <!-- </script> -->
-<!-- project = Project.where(ano: 2012).where(tipo: "IND")
-auts = project.map { |p| p.authorships }
-name = auts.map { |aut| aut[0].councillor.name}
- -->
-
-
-          <!--  .joins(:councillors).where("councillor.id == councillor_id").group(:name).count, thousands: ".", width: "600px", height: "300px", xtitle: "Tipo de matéria", ytitle: "Quantidade"  %> -->
+        <%= column_chart Project.councillors_names(2012, "IND"), thousands: "."%>
 
         <%= line_chart @project_list.map { |project|
     {name: project, data: @projects.where(tipo: project).group(:ano).count }
