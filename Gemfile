@@ -7,6 +7,10 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
+gem 'graph'
+gem 'chartkick'
+gem 'groupdate'
+
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -17,8 +21,6 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'select2-rails'
 gem 'jquery-rails'
-
-gem "chartkick"
 
 group :development do
   gem 'web-console', '>= 3.3.0'

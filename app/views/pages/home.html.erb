@@ -80,16 +80,17 @@
     <div class="row align-center">
       <div class="col-xs-12 col-sm-4">
         <div class="card align-center">
-          <%= image_tag 'graph1.png' %>
+          <%= render "votings/index" %>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="card align-center">
-          <%= image_tag 'graph2.png' %></div>
+          <%= column_chart Project.where(ano: 2012..2018).group(:ano).count, thousands: ".", width: "400px", height: "300px" %>qtde projetos ano</div>
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="card align-center">
           <%= image_tag 'graph3.png' %>
+          <p>Acresentar gŕafico de status por projeto</p>
         </div>
       </div>
     </div>
