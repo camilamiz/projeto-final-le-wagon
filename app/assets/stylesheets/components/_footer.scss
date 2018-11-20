@@ -3,9 +3,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 50px;
   padding: 0px 30px;
   color: rgba(0,0,0,0.3);
+  z-index: 5;
 }
 .footer-links {
   display: flex;
@@ -25,5 +26,5 @@
   color: #D23333;
 }
 .stick-footer {
-  min-height: calc(100vh - 170px)
+  min-height: calc(100vh - 120px)
 }
