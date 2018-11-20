@@ -29,9 +29,14 @@
         <p>2018</p>
         <div class="project-chart">
           <%= column_chart Project.where(ano: 2018).group(:tipo).count, thousands: ".", width: "600px", height: "300px", xtitle: "Tipo de matéria", ytitle: "Quantidade"  %>
-          <%= column_chart Project.where(ano: 2012).where(tipo: "IND").joins(:authorships).where(project[0].id == project_id).group(councillor_id).count%>
 
 
+          <!-- <script> -->
+
+             <!-- console.log( -->
+<!--             Project.where(ano: 2012).where(tipo: "IND").joins(:authorships).where("authorship.project_id = ?", self.project.id) %> -->
+            <!-- ); -->
+          <!-- </script> -->
 <!-- project = Project.where(ano: 2012).where(tipo: "IND")
 auts = project.map { |p| p.authorships }
 name = auts.map { |aut| aut[0].councillor.name}
