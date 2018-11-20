@@ -68,6 +68,9 @@ GEM
       sassc (>= 1.11)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    graph (2.8.2)
+    groupdate (4.1.0)
+      activesupport (>= 4.2)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.8.0)
@@ -202,6 +205,8 @@ DEPENDENCIES
   chartkick
   dotenv-rails
   font-awesome-sass (~> 5.0.9)
+  graph
+  groupdate
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)

@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     @parties_projects = count_projects
+    @project_list = ["PL", "PDL", "RDS", "IND", "SUB"]
   end
 
   def show
