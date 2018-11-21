@@ -1,12 +1,8 @@
-<!-- <div class="page-header back-image" id="councillors-page">
-  <h1>Ánálise dos vereadores <small>Subtext for header</small></h1>
-</div>
- -->
 <div class="section" id="attendance-chart">
   <div class="section-presentation">
-    <h3>Presença</h3>
+    <h3>PRESENÇA</h3>
   </div>
-  <div class="row-camara col-xs-12">
+  <div class="row col-xs-12">
     <div class="project-info col-xs-4">
       <div class="icon">
         <i class="fas fa-user-check"></i>
@@ -76,54 +72,50 @@
       </div> <!-- scroll-wrapper -->
     </div>
 
-  </div> <!-- row-camara -->
+  </div> <!-- row -->
 </div> <!-- section -->
 
 
 
 
-<div class="section" id="outra-coisa-ND">
+<div class="section" id="projetos-partido">
   <div class="section-presentation">
-    <h3>Outros gráficos</h3>
+    <h3>QUANTIDADE DE PROJETOS POR PARTIDO</h3>
   </div>
   <br>
-  <div class="row-camara col-xs-12">
-    <div class="project-info col-xs-4">
+  <div class="row col-xs-12">
+    <div class="project-info col-xs-4 col-xs-offset-1">
       <div class="icon">
-        <i class="fas fa-user-check"></i>
+        <i class="far fa-file-alt"></i>
       </div>
       <br><br>
       <div class="info-texto">
-        <p>A base de cálculo da presença dos vereadores foi obtida a partir de um arquivo como <%= link_to 'este', 'https://splegispdarmazenamento.blob.core.windows.net/containersip/PRESENCAS_2018.xml', target:"_blank" %>.<br>Nele, podemos ver se cada candidato compareceu ou não à sessão de um determinado dia. A partir daí, através de um cálculo simples, consideramos qualquer outro status diferente de <em>Presente</em>, como um não-comparecimento à sessão.<br><br><em>Mas por que isso é importante?</em><br>O não comparecimento às sessões pode causar o seu cancelamento por falta de participantes e, desta maneira, a Câmara de São Paulo deixa de apresentar, discutir e votar projetos que possam ser importantes para a cidade.</p>
+        <p>A base de cálculo da quantidade de projetos por partido foi obtida a partir de um arquivo como <%= link_to 'este', 'http://splegisws.camara.sp.gov.br/ws/ws2.asmx/ProjetosPorAnoJSON?ano=2018', target:"_blank" %>.<br>Nele é possível visualizar individualmente projetos de 2018 e de que <%= link_to 'tipo', '/projects', target:"_blank" %> são. <br>
+        A tabela abaixo mostra a composição de partidos na Câmara de São Paulo e a partir dessa informação é possível cruzar informações do gráfico com a representatividade do partido.</p>
+      </div>
+
+      <div>
+        <%= render 'components/table' %>
       </div>
     </div>
-
     <div class="project-info col-xs-4">
-      <%= column_chart Authorship.group(:councillor_id).count, width: "400px", height: "400px" %>
-    </div>
-
-    <div class="project-info col-xs-4">
-      <div class="icon">
-        <i class="far fa-flag"></i>
-      </div>
-      <div class="scroll-wrapper">
-        <div class="col-xs-12">
-          <% @party_attendances.each do |party| %>
-            <div class="card align-center">
-              <%= party[0] %>
-            </div>
-            <div class="card align-center">
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:<%= party[1] %>%;">
-                  <%= party[1] %>%
-                </div>
-              </div>
-            </div>
-          <% end %>
+      <div class="chart-box">
+        <div class="chart-card align-center" style="width: 600px; height: 400px;">
+          <%= column_chart @parties_projects2017, thousands: ".", width: "580px", height: "300px", xtitle: "Partido",ytitle: "Quantidade"  %>
+          <br>
+          <p>  Projetos lançados por partidos em 2018</p>
         </div>
-      </div> <!-- scroll-wrapper -->
+      </div>
+      <div class="chart-box">
+        <div class="chart-card align-center" style="width: 600px; height: 400px">
+          <%= column_chart @parties_projects2016, thousands: ".", width: "580px", height: "300px", xtitle: "Partido", ytitle: "Quantidade" %>
+          <br>
+          <p>  Projetos lançados por partidos em 2017</p>
+        </div>
+      </div>
     </div>
-
   </div> <!-- row-camara -->
 </div> <!-- section -->
+
+
 

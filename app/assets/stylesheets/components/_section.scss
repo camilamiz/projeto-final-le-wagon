@@ -19,7 +19,6 @@
   background-color: $light-gray;
 }
 
-
 .card {
   // height: 175px;
   background-size: cover !important;
@@ -79,6 +78,37 @@
   margin-left: 0;
 }
 
-#attendance-chart, #project-chart-type {
-  margin-top: 30px;
+#attendance-chart {
+  background-color: rgb(248, 248, 248);
+  min-height: 650px;
+  padding-bottom: 30px;
+  align-items: center;
+  h3 {
+    margin-top: 0;
+    padding-top: 50px;
+  }
+}
+
+.chart-card{
+  background-color: rgb(248, 248, 248);
+  border-radius: 1px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  margin: 70px 50px;
+  padding: 10px;
+}
+
+.projetos-partido {
+  h3 {
+    padding-top: 30px;
+  }
+}
+.section-presentation {
+  h3 {
+    font-size: 40px;
+    font-family: 'Allerta Stencil';
+  }
+}
+.chart-box {
+  text-align: center;
+
 }
