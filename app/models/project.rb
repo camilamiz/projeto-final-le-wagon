@@ -22,5 +22,7 @@ class Project < ApplicationRecord
         councillor_array[0], councillor_array[1].count
       ]
     end
+
+
   end
 end
