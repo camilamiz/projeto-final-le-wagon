@@ -8,6 +8,8 @@ class CouncillorsController < ApplicationController
     general_present_days = Attendance.where("att_date > ? AND present = ?", Date.parse("01 Jan 2017"), true).count.to_f
     @general_presence = (general_present_days / general_total_days * 100).floor(2)
     @party_attendances = count_attendances
+    @parties_projects2016 = count_projects(2016)
+    @parties_projects2017 = count_projects(2017)
   end
 
   def show
@@ -40,5 +42,14 @@ class CouncillorsController < ApplicationController
 
   def rank_types(councillor)
     @councillor_projects = Project.where.not(tipo: "SUB").joins(:authorships).where(authorships: { councillor: councillor })
+  end
+
+  def count_projects(year)
+    parties = Attendance.where("att_date > ?", Date.parse("01 Jan 2017")).map { |att| att[:party] }.uniq
+    hash = {}
+    parties.each do |partido|
+      hash[partido] = Project.where("ano > ?", year).joins(:councillors).where(councillors: { party: partido }).count
+    end
+    return hash
   end
 end
