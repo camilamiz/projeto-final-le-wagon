@@ -1,7 +1,5 @@
 class Voting < ApplicationRecord
   belongs_to :project
-  belongs_to :councillor
-
 
 # Votings with date range
   def self.session_grouped(date_range = {})
