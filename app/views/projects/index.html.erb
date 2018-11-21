@@ -35,6 +35,11 @@
         <%= line_chart @project_list.map { |project|
     {name: project, data: @projects.where(tipo: project).group(:ano).count }
       }, height: "500px", thousands: "." %>
+
+        <%= line_chart @status_list.map { |stat|
+    {name: stat, data: @projects.where(status: stat).group(:ano).count }
+      }, height: "400px", thousands: "." %>
+      <p>status de perojetos</p>
         </div>
       </div>
     </div> <!-- project -->
