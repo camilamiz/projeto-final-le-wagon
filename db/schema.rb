@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_160321) do
+ActiveRecord::Schema.define(version: 2018_11_21_164700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 2018_11_20_160321) do
     t.string "ementa"
     t.string "rodape"
     t.string "partido"
+    t.string "resultado"
+    t.integer "chave"
     t.index ["councillor_id"], name: "index_votings_on_councillor_id"
     t.index ["project_id"], name: "index_votings_on_project_id"
   end
