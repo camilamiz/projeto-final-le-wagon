@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     @parties_projects = count_projects
     @project_list = ["PL", "PDL", "RDS", "IND", "SUB"]
+    @status_list = ["Em Tramitação", "Vetado", "Aprovado", "Promulgado", "Encerrado por Ilegalidade", "Retirado pelo autor"]
   end
 
   def show
