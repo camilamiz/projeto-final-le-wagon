@@ -1,6 +1,6 @@
 <div class="section" id="project-chart-type">
   <div class="section-presentation">
-    <h3>Tipos de Matéria</h3>
+    <h3>TIPOS DE MATÉRIA</h3>
   </div>
   <div class="row col-xs-12">
     <div class="project">
@@ -40,6 +40,11 @@
     {name: stat, data: @projects.where(status: stat).group(:ano).count }
       }, height: "400px", thousands: "." %>
       <p>status de perojetos</p>
+
+        <%= line_chart @status_list.map { |stat|
+    {name: stat, data: @projects.where(status: stat).group(:ano).count }
+      }, height: "400px", thousands: "." %>
+
         </div>
       </div>
     </div> <!-- project -->
