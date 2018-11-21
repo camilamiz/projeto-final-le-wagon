@@ -9,13 +9,13 @@
 #profile-info {
   grid-row: 1 / span 2;
   grid-column: 1 /span 1;
-  margin-top: 70px;
+  margin-top: 20px;
+  margin: 0 auto;
 }
 
 #contributions-card {
   grid-row: 1 / span 1;
   grid-column: 2 /span 1;
-  margin-top: 70px;
 }
 
 #followers-card {
@@ -49,4 +49,24 @@
 
 #contributions-card p, #followers-card p, #repo p, #more-about p {
   color: rgb(150, 150, 150);
+}
+
+.councillor-title h1 {
+  margin-left: 60px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.councillor-info {
+  display: grid;
+  grid-template-columns: 300px repeat(2, 1fr);
+}
+
+#councillor-photo img {
+  border-radius: 10%;
+  border: 1px solid grey;
+}
+
+#councillor-photo h5, h6 {
+  text-align: center;
 }
