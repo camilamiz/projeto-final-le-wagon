@@ -1,32 +1,38 @@
 <div class="container">
 
-  <div class="grid">
+  <div class="councillor-title">
+    <h1><%= @councillor.name.split(" ").map { |n| n.capitalize }.join(" ") %> - <%= @councillor.party %></h1>
+  </div>
+
+  <div class="councillor-info">
     <div class="card" id="profile-info">
-      <div id="councillor-photo">fotinho</div>
-      <div class="councillor-name">
-        <h4><%= @councillor.name.split(" ").map { |n| n.capitalize }.join(" ") %></h4>
-        <p><%= @councillor.party %></p>
+      <div id="councillor-photo">
+        <% if @councillor.photo %>
+          <%= image_tag(@councillor.photo) %>
+        <% end %>
+        <% if @councillor.name %>
+          <h5><strong>Nome:</strong> <%= @councillor.name.split(" ").map { |n| n.capitalize }.join(" ") %></h5>
+        <% end %>
+        <% if @councillor.party %>
+          <h6><strong>Partido:</strong> <%= @councillor.party %></h6>
+        <% end %>
       </div>
-      <div class="progress">
+      <br>
+      <div class="councillor-presence">
+        <h6>Presença nas sessões:</h6>
         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:<%= @presence %>%;">
-          <%= @presence %>%
+            <%= @presence %>%
         </div>
       </div>
     </div>
 
     <div class="card" id="contributions-card">
+      <h5>Projetos apresentados:</h5>
       <div class="card-content">
         <%= line_chart @tipo_list_show.map { |tipo|
           { name: tipo, data: @councillor_projects.where(tipo: tipo).group(:ano).count
           } }
                     %>
-        </div> <!-- card-content -->
-      </div> <!-- card -->
-
-    <div class="card" id="repo">
-      <div class="card-content">
-        <h3>119</h3>
-        <p>repositories</p>
       </div> <!-- card-content -->
     </div> <!-- card -->
 
@@ -41,4 +47,3 @@
   </div> <!-- grid -->
 
 </div> <!-- container -->
-
