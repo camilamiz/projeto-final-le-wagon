@@ -39,13 +39,6 @@
   align-items: center;
 }
 
-// .classe-de-tamanho {
-//   pra geral ficar igual
-
-.cards {
-  position: relative;
-}
-
 .card-flip1 {
   position: absolute;
   top: 50%;
@@ -77,9 +70,9 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background: white;
+  background: $light-gray;
   line-height: 300px;
-  color: #03446A;
+  color: $gray;
   text-align: center;
   font-size: 60px;
   border-radius: 5px;
@@ -87,8 +80,8 @@
 }
 
 .back-flip1 {
-  background: #03446A;
-  color: white;
+  background: $gray;
+  color: $light-gray;
   transform: rotateY( 180deg );
 }
 
@@ -123,9 +116,9 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background: white;
+  background: $dark-red;
   line-height: 300px;
-  color: #03446A;
+  color: $green-gray;
   text-align: center;
   font-size: 60px;
   border-radius: 5px;
@@ -133,7 +126,7 @@
 }
 
 .back-flip2 {
-  background: #03446A;
-  color: white;
+  background: $green-gray;
+  color: $dark-red;
   transform: rotateY( 180deg );
 }
