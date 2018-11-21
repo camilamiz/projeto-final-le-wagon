@@ -1,4 +1,6 @@
 .footer {
+  font-family: 'Allerta Stencil';
+  font-size: 16px;
   background: $white-gray;
   display: flex;
   align-items: center;
@@ -22,7 +24,7 @@
 .footer-links a:hover {
   opacity: 1;
 }
-.footer .fa-heart {
+.footer-copyright {
   color: #D23333;
 }
 .stick-footer {
