@@ -32,11 +32,9 @@
 
     <div class="card" id="more-about">
       <div class="card-content">
-        <h3>More about Sebastien</h3>
-        <p class="text-justify">
-          I am a full-stack developer with 9 years of experience working in startups. Scratching your own itch? Working on a startup project? Lots of ideas but frustrated that you can't code them? Confused with agencies' or freelances' quotes? No clue when a developer is talking? Time to learn to code with Le Wagon with
-          a 9-week intensive and immersive bootcamp!
-        </p>
+        <%= line_chart @status_list.map { |stat|
+    {name: stat, data: @projects.where(status: stat).group(:ano).count }
+      }, height: "300px", thousands: "." %>
       </div> <!-- card-content -->
     </div> <!-- card -->
 

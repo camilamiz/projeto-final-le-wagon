@@ -20,6 +20,8 @@ class CouncillorsController < ApplicationController
     @tipo_list_show = @councillor_projects.map { |p|
       p[:tipo]
     }.uniq
+    @projects = Project.joins(:authorships).where(authorships: {councillor: @councillor} )
+    @status_list = ["Em Tramitação", "Vetado", "Aprovado", "Promulgado", "Encerrado por Ilegalidade", "Retirado pelo autor"]
   end
 
 
