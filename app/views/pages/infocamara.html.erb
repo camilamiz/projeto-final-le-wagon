@@ -33,27 +33,41 @@
       </div>
     </div>
   </div>
+
   <div class="wrapper-gray">
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <div class="card-icon">
+     <div id="cards">
+      <div class="card-flip1">
+        <div class="content-flip">
+          <div class="front-flip">
             <%= image_tag "law_icon.png", alt: "law", width: 200 %>
-            <!-- <data-toggle="tooltip" data-placement="left" title="Criam, mudam e desfazer as regras que organizam a cidade."></button> -->
-
-            <!-- <data-toggle="tooltip" data-placement="right" title="Fiscalizar as ações da prefeitura não quebrem as Leis e que aja com responsabilidade."> -->
-            <%= image_tag "oversee_icon.png", alt: "oversee", width: 200 %>
           </div>
-        </div>
-        <div class="col-xs-12 col-md-6">
-          <div class="card-text">
-            <h3>As principais responsabilidades dos vereadores são</h3>
+          <div class="back-flip">
+            Law
           </div>
         </div>
       </div>
+      <div class="card-flip2">
+        <div class="content-flip">
+          <div class="front-flip">
+            <%= image_tag "oversee_icon.png", alt: "oversee", width: 200 %>
+          </div>
+          <div class="back-flip">
+            Oversee
+          </div>
+        </div>
+      </div>
+     </div>
     </div>
   </div>
 </div>
+
+
+            <!-- <h3>As principais responsabilidades dos vereadores são</h3> -->
+
+            <!-- <data-toggle="tooltip" data-placement="left" title="Criam, mudam e desfazer as regras que organizam a cidade."></button> -->
+
+            <!-- <data-toggle="tooltip" data-placement="right" title="Fiscalizar as ações da prefeitura não quebrem as Leis e que aja com responsabilidade."> -->
 
 
 
@@ -62,6 +76,4 @@
 
 <!-- Os Projetos de Lei (PL) são criados e votados pelos vereadores com a participação do prefeito. É ele que vai confirmar (sancionar) o projeto, transformando ele em lei. O prefeito pode também criar uma lei, mas ela PRECISA ser votadas pelos vereadores -->
 <!-- Câmara de Vereadores que julgará o prefeito.  -->
-<br>
-<br>
 
