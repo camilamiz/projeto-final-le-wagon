@@ -89,8 +89,10 @@
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="card align-center">
-          <%= image_tag 'graph3.png' %>
-          <p>Acresentar gŕafico de status por projeto</p>
+          <% status_list = ["Em Tramitação", "Vetado", "Aprovado", "Promulgado", "Encerrado por Ilegalidade", "Retirado pelo autor"] %>
+           <%= line_chart status_list.map { |stat|
+    {name: stat, data: Project.where(status: stat).group(:ano).count }
+      }, height: "400px", thousands: "." %>
         </div>
       </div>
     </div>
