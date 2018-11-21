@@ -209,10 +209,7 @@ years_array.each do |year|
                 counc_name = "JANAÍNA LIMA" if counc_name == "Janaina Lima".upcase
                 counc_name = "ATÍLIO FRANCISCO" if counc_name == "Atilio Francisco".upcase
 
-                p counc_name
-                p data
                 councillor_id = Councillor.find_by(name: counc_name).id
-                p councillor_id
                 vote = false
                 Voting.create!(
                 vote_date: data,
