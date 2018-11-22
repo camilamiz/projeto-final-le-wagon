@@ -115,11 +115,20 @@
     font-family: 'Allerta Stencil';
   }
 }
+
 .chart-box {
   text-align: center;
-
 }
+
 .section-chart{
   display: flex;
   justify-content: space-around;
+}
+
+#surgimento {
+  background-color: #f2f2f2;
+}
+
+#funcionamento {
+  border-top: 100px;
 }
