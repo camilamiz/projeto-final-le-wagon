@@ -145,8 +145,8 @@
 // section tag was applied on councillor's index page
 section {
   margin-top: 80px;
-  margin-bottom: 100px;
-  padding-bottom: 300px;
+  // margin-bottom: 100px;
+  padding-bottom: 30px;
 }
 .chart-row {
   margin-top: 0px;
@@ -155,9 +155,6 @@ section {
 }
 #INDcase {
   padding-bottom: 80px;
-  display: flex;
-
-  vertical-align: baseline;
 }
 .project-type{
   margin-bottom: 300px;
@@ -165,4 +162,15 @@ section {
 #chart-2012{
   margin-right: 30px;
   bottom: 0 px;
+}
+.chart-card-margin {
+  margin-right: 10px;
+  margin-right: 10px;
+}
+.projects-container {
+  max-width: 98%;
+}
+.proposito-grafico {
+  margin-top: 30px;
+  padding: 70px;
 }
