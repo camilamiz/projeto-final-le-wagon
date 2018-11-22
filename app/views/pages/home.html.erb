@@ -2,7 +2,8 @@
 </div>
 
 <div class="section">
-  <div class="row-camara col-xs-12">
+  <div class="row-camara col-xs-12" id="surgimento">
+    <br>
     <a id="sobre-section"><h3>Como surgiu o projeto?</h3></a>
     <div class="project">
       <div class="project-info col-xs-3">
@@ -41,7 +42,7 @@
 <div class="section" id="camara">
 
   <div class="section-presentation">
-    <h3>Como funciona a câmara de vereadores?</h3>
+    <h3>Como funciona a Câmara dos Vereadores?</h3>
   </div>
   <br>
   <div class="row-camara col-xs-12">
@@ -77,25 +78,29 @@
     <h3>Que informações conseguimos a partir desses dados?</h3>
   </div>
   <div class="container">
+    <br>
     <div class="row align-center">
       <div class="col-xs-12 col-sm-4">
-        <div class="card align-center">
+        <div class="card align-center margin-left">
           <%= render "votings/index" %>
+          <p>Podemos ver a quantidade de votações realizadas na Câmara mensalmente. São consideradas aqui somente votações referentes a um projeto de lei específico.</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
-        <div class="card align-center">
-          <%= column_chart Project.where(ano: 2012..2018).group(:ano).count, thousands: ".", width: "400px", height: "300px" %>qtde projetos ano</div>
+        <div class="card align-center margin-left">
+          <%= column_chart Project.where(ano: 2012..2018).group(:ano).count, thousands: ".", width: "350px", height: "350px", ytitle: "Projetos"%>
+          <p>Também conseguimos ver o total de projetos elaborados anualmente pelos vereadores, abrangendo todas as diferentes modalidades (PL, RDS, PR, PLO, etc)...</p>
+        </div>
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="card align-center">
           <% status_list = ["Em Tramitação", "Vetado", "Aprovado", "Promulgado", "Encerrado por Ilegalidade", "Retirado pelo autor"] %>
-           <%= line_chart status_list.map { |stat|
-    {name: stat, data: Project.where(status: stat).group(:ano).count }
-      }, height: "400px", thousands: "." %>
+          <%= line_chart status_list.map { |stat|
+            {name: stat, data: Project.where(status: stat).group(:ano).count }
+          }, height: "350px", thousands: "." %>
+          <p>...e desse total, temos a divisão acima quanto à atual situação dos projetos elaborados em cada ano. (Considerando somente PL, PDL, PR e PLO)</p>
         </div>
       </div>
-
     </div>
   </div>
 </div>
