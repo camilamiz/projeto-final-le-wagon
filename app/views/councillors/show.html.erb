@@ -28,19 +28,30 @@
 
     <div class="card" id="contributions-card">
       <h5>Projetos apresentados:</h5>
-      <div class="card-content">
-        <%= line_chart @tipo_list_show.map { |tipo|
-          { name: tipo, data: @councillor_projects.where(tipo: tipo).group(:ano).count
-          } }
-                    %>
-      </div> <!-- card-content -->
+
+      <div class="container">
+        <div class="col-sm-6">
+          <div class="card-content">
+            <%= line_chart @tipo_list_show.map { |tipo|
+              { name: tipo, data: @councillor_projects.where(tipo: tipo).group(:ano).count
+              } }
+                        %>
+          </div> <!-- card-content -->
+        </div>
+        <div class="col-sm-6">
+          <div class="scroll-wrapper">
+            <%= render 'components/tipos_de_projeto' %>
+          </div>
+        </div>
+      </div>
+
     </div> <!-- card -->
 
     <div class="card" id="more-about">
       <div class="card-content">
         <%= line_chart @status_list.map { |stat|
     {name: stat, data: @projects.where(status: stat).group(:ano).count }
-      }, height: "300px", thousands: "." %>
+      }, width: "800px",height: "300px", thousands: "." %>
       </div> <!-- card-content -->
     </div> <!-- card -->
 
