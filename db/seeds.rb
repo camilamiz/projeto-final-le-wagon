@@ -198,7 +198,7 @@ years_array.each do |year|
       materia = votacao['Materia']
       chave = votacao['VotacaoID'].to_i
 
-      if votacao['Resultado'] = "Aprovado1"
+      if votacao['Resultado'] == "Aprovado1" || votacao['Resultado'] == "Aprovado2"
         resultado = "Aprovado"
       else
         resultado = votacao['Resultado']
