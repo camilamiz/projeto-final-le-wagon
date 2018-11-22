@@ -1,3 +1,10 @@
+html {
+  position: relative;
+}
+body {
+  min-height: calc(100vh - 50px;)
+}
+
 .footer {
   font-family: 'Allerta Stencil';
   font-size: 16px;
@@ -8,7 +15,10 @@
   height: 50px;
   padding: 0px 30px;
   color: $dark-gray;
-  z-index: 5;
+  // z-index: 5;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .footer-links {
   display: flex;
@@ -27,6 +37,7 @@
 .footer-copyright {
   color: #D23333;
 }
-.stick-footer {
-  min-height: calc(100vh - 120px)
+
+.caption-chart {
+  width: 300px;
 }

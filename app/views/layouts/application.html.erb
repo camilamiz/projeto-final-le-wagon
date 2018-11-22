@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Projeto Vérteres</title>
+    <title>DECODECITY</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= javascript_include_tag 'application' %>
@@ -13,9 +13,7 @@
   </head>
   <body>
     <%= render 'components/navbar' %>
-    <div class="stick-footer">
-      <%= yield %>
-    </div>
+    <%= yield %>
     <%= render 'components/footer' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
