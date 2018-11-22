@@ -121,8 +121,51 @@
 }
 
 .section-chart{
+  align-content: center;
+  margin-left: 250px;
+}
+
+.section-top-margin {
+  margin-top: 50px;
+  padding-top: 100px;
+  justify-content: center;
+
+  p {
+    margin-top: 20px;
+  }
+}
+
+
+.chart-text {
+  p {
+    text-align: justify;
+    padding: 10px 30px;
+  }
+}
+
+// section tag was applied on councillor's index page
+section {
+  margin-top: 80px;
+  margin-bottom: 100px;
+  padding-bottom: 300px;
+}
+.chart-row {
+  margin-top: 0px;
+  margin-bottom: 50px;
+  padding-top: 50px;
+}
+#INDcase {
+  padding-bottom: 80px;
   display: flex;
-  justify-content: space-around;
+
+  vertical-align: baseline;
+}
+.project-type{
+  margin-bottom: 300px;
+}
+#chart-2012{
+  margin-right: 30px;
+  bottom: 0 px;
 }
 
 #surgimento {
