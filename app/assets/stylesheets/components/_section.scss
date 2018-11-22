@@ -115,10 +115,11 @@
     font-family: 'Allerta Stencil';
   }
 }
+
 .chart-box {
   text-align: center;
-
 }
+
 .section-chart{
   align-content: center;
   margin-left: 250px;
@@ -165,4 +166,12 @@ section {
 #chart-2012{
   margin-right: 30px;
   bottom: 0 px;
+}
+
+#surgimento {
+  background-color: #f2f2f2;
+}
+
+#funcionamento {
+  border-top: 100px;
 }
