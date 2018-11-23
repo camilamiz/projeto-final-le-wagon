@@ -26,24 +26,38 @@
       </div>
     </div>
 
-    <div class="card" id="contributions-card">
-      <h5>Projetos apresentados:</h5>
-      <div class="card-content">
-        <%= line_chart @tipo_list_show.map { |tipo|
-          { name: tipo, data: @councillor_projects.where(tipo: tipo).group(:ano).count
-          } }
-                    %>
-      </div> <!-- card-content -->
-    </div> <!-- card -->
+    <div class="charts">
+      <div class="row">
+        <div class="card" id="more-about">
+         <h5>Status de projetos apresentados:</h5>
+        <div class="card-content">
+          <%= line_chart @status_list.map { |stat|
+      {name: stat, data: @projects.where(status: stat).group(:ano).count }
+        }, height: "300px", width:"600px", thousands: ".", discrete: true, legend: "bottom", xtitle: "Ano", ytitle:"Quantidade" %>
+        </div> <!-- card-content -->
+      </div> <!-- card -->
+          <h5>Tipos de projetos apresentados:</h5>
+        <div class="col-xs-12">
+        <div class="chart-project-type-show">
+          <div class="chart-content">
+            <%= line_chart @tipo_list_show.map { |tipo|
+              { name: tipo, data: @councillor_projects.where(tipo: tipo).group(:ano).count
+              } },legend: "bottom", width: "600px", discrete: true, xtitle: "Ano", ytitle:"Quantidade" %>
+          </div> <!-- card-content -->
+        </div>
+        <div class="project-labels">
+          <div class="texto-explicativo">
+            <p>Segue abaixo a lista de siglas utilizadas para denominação de cada tipo de projeto. A lista completa pode ser encontrada neste <%= link_to 'link', 'http://splegisws.camara.sp.gov.br/ws/ws2.asmx/TiposDeMateria', target: "_blank" %>.</p>
+          </div>
+          <div class="scroll-wrapper" id="project-labels">
+            <%= render 'components/tipos_de_projeto' %>
+          </div>
+        </div>
+        </div>
+      </div>
 
-    <div class="card" id="more-about">
-      <div class="card-content">
-        <%= line_chart @status_list.map { |stat|
-    {name: stat, data: @projects.where(status: stat).group(:ano).count }
-      }, height: "300px", thousands: "." %>
-      </div> <!-- card-content -->
-    </div> <!-- card -->
 
-  </div> <!-- grid -->
+    </div>
+  </div> <!-- councillor-info -->
 
 </div> <!-- container -->

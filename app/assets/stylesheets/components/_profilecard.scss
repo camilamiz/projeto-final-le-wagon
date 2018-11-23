@@ -1,9 +1,7 @@
-.grid {
+.councillor-info {
   display: grid;
-  grid-template-columns: 350px repeat(3, 1fr);
-  grid-template-rows: 50% 50%;
-  padding: 30px;
-  height: calc(100vh - 70px);
+  grid-template-columns: 300px repeat(2, 1fr);
+  grid-template-rows: 33% 33% 33%;
 }
 
 #profile-info {
@@ -12,31 +10,24 @@
   margin-top: 20px;
   margin: 0 auto;
 }
-
-#contributions-card {
+// .chart-content {
+//   width: 350px;
+// }
+// .chart-project-type-show {
+//   grid-row: 1 / span 1;
+//   grid-column: 2 /span 1;
+// }
+#project-labels {
   grid-row: 1 / span 1;
-  grid-column: 2 /span 1;
+  grid-column: 2 / span 2;
 }
-
-#followers-card {
-  grid-row: 1 / span 1;
-  grid-column: 3 /span 1;
-  margin-top: 70px;
-}
-
-#repo {
-  grid-row: 1 / span 1;
-  grid-column: 4 /span 1;
-  margin-top: 70px;
-}
-
 #more-about {
   grid-row: 2 / span 1;
-  grid-column: 2 /span 3;
-  padding: 50px;
+  grid-column: 2 /span 2;
+  // padding: 50px;
 }
 
-#contributions-card h3, #followers-card h3, #repo h3 {
+#contributions-card h3 {
   color: rgb(0, 195, 134);
   font-size: 28px;
 }
@@ -47,7 +38,7 @@
   padding-bottom: 5px;
 }
 
-#contributions-card p, #followers-card p, #repo p, #more-about p {
+#contributions-card p, #more-about p {
   color: rgb(150, 150, 150);
 }
 
@@ -57,10 +48,6 @@
   font-weight: bold;
 }
 
-.councillor-info {
-  display: grid;
-  grid-template-columns: 300px repeat(2, 1fr);
-}
 
 #councillor-photo img {
   border-radius: 10%;
@@ -69,4 +56,8 @@
 
 #councillor-photo h5, h6 {
   text-align: center;
+}
+.charts {
+  padding-bottom: 80px;
+  padding-left: 100px;
 }
