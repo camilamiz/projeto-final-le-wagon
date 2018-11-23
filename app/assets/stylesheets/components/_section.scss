@@ -4,6 +4,11 @@
 
   #sobre-section {
     color: rgba(70, 70, 70, 0.7);
+    h3 {
+      color: rgba(70, 70, 70, 0.8);
+      font-family: 'Allerta Stencil';
+      font-size: 40px;
+    }
   }
   #sobre-section:hover {
     text-decoration: none;
@@ -143,12 +148,6 @@
   }
 }
 
-// section tag was applied on councillor's index page
-section {
-  margin-top: 80px;
-  margin-bottom: 100px;
-  padding-bottom: 300px;
-}
 .chart-row {
   margin-top: 0px;
   margin-bottom: 50px;
@@ -174,4 +173,7 @@ section {
 
 #funcionamento {
   border-top: 100px;
+}
+.projects-wrapper {
+  padding-bottom: 100px;
 }

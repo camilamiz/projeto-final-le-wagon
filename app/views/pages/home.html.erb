@@ -4,7 +4,7 @@
 <div class="section">
   <div class="row-camara col-xs-12" id="surgimento">
     <br>
-    <a id="sobre-section"><h3>Como surgiu o projeto?</h3></a>
+    <a id="sobre-section"><h3>COMO SURGIU O PROJETO?</h3></a>
     <div class="project">
       <div class="project-info col-xs-3">
         <div class="icon">
@@ -42,7 +42,7 @@
 <div class="section" id="camara">
 
   <div class="section-presentation">
-    <h3>Como funciona a Câmara dos Vereadores?</h3>
+    <h3>ALGUNS FATOS SOBRE A CÂMARA DE SÃO PAULO</h3>
   </div>
   <br>
   <div class="row-camara col-xs-12">
@@ -75,7 +75,7 @@
 
 <div class="section" id="graphs">
   <div class="section-presentation">
-    <h3>Que informações conseguimos a partir desses dados?</h3>
+    <h3>O QUE É POSSÍVEL FAZER COM ESSES DADOS?</h3>
   </div>
   <div class="container">
     <br>
@@ -88,8 +88,8 @@
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="card align-center margin-left">
-          <%= column_chart Project.where(ano: 2012..2018).group(:ano).count, thousands: ".", width: "350px", height: "350px", ytitle: "Projetos"%>
-          <p>Também conseguimos ver o total de projetos elaborados anualmente pelos vereadores, abrangendo todas as diferentes modalidades (PL, RDS, PR, PLO, etc)...</p>
+          <%= column_chart Project.where(ano: 2013..2018).group(:ano).count, thousands: ".", width: "350px", height: "350px", ytitle: "Projetos"%>
+          <p>Também conseguimos ver o total de projetos elaborados anualmente pelos vereadores, abrangendo todas as diferentes modalidades (PL, RDS, PR, PLO,...)...</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
@@ -100,6 +100,23 @@
           }, height: "350px", thousands: "." %>
           <p>...e desse total, temos a divisão acima quanto à atual situação dos projetos elaborados em cada ano. (Considerando somente PL, PDL, PR e PLO)</p>
         </div>
+      </div>
+    </div>
+    <div class="row align-center">
+      <div class="col-xs-12">
+        <div class="col-xs-offset-3">
+          <div class="info-texto">Para gráficos mais específicos, clique em um dos botões abaixo.</div>
+        </div>
+      </div>
+      <br><br>
+      <div class="col-xs-12">
+        <span class="col-xs-4 col-xs-offset-4">
+          <%= link_to "Vereadores", "/councillors", class: "btn btn-danger", target:"_blank" %>
+        <span>
+        <span>
+          <%= link_to "Projetos", "/projects", class: "btn btn-danger", target:"_blank" %>
+         <span>
+        </span>
       </div>
     </div>
   </div>
